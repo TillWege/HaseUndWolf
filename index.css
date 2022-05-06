@@ -1,0 +1,9 @@
+body {
+    margin: 0px;
+}
+
+.gamespace {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+}
