@@ -2,8 +2,56 @@ body {
     margin: 0px;
 }
 
+.egg{
+    position: absolute;
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;;
+}
+
 .gamespace {
+    position: absolute;
+    background-color: gray;
+    width: 700px;
+    height: 500px;
+}
+
+.korb {
+    position: absolute;
+    top: 375px;
+    left: 200px;
     background-color: red;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
+}
+
+.ramp {
+    position: absolute;
+    width: 150px;
+    height: 25px;
+    background-color: brown;
+}
+
+#BottomRight{
+    left: 50px;
+    top: 300px;
+    transform: rotate(20deg);
+}
+
+#TopLeft{
+    left: 50px;
+    top: 200px;transform: rotate(20deg);
+}
+
+#BottomLeft{
+    right: 50px;
+    top: 300px;
+    transform: rotate(-20deg);
+}
+
+#TopRight{
+    right: 50px;
+    top: 200px;
+    transform: rotate(-20deg);
 }
