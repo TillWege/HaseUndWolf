@@ -2,12 +2,13 @@ body {
     margin: 0px;
 }
 
-.egg{
+.egg {
     position: absolute;
     background-color: white;
     height: 20px;
     width: 20px;
-    border-radius: 50%;;
+    border-radius: 50%;
+    ;
 }
 
 .gamespace {
@@ -33,24 +34,35 @@ body {
     background-color: brown;
 }
 
-#BottomRight{
+.ui {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.scoreText {
+    display: inline
+}
+
+#BottomRight {
     left: 50px;
     top: 300px;
     transform: rotate(20deg);
 }
 
-#TopLeft{
+#TopLeft {
     left: 50px;
-    top: 200px;transform: rotate(20deg);
+    top: 200px;
+    transform: rotate(20deg);
 }
 
-#BottomLeft{
+#BottomLeft {
     right: 50px;
     top: 300px;
     transform: rotate(-20deg);
 }
 
-#TopRight{
+#TopRight {
     right: 50px;
     top: 200px;
     transform: rotate(-20deg);
