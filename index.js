@@ -11,6 +11,7 @@ let gamespace
 let playerPosition
 let updateIntervall
 let gameRunning
+let messageText
 
 
 // Helper Funktionen
@@ -26,9 +27,8 @@ function addScore() {
 
 function removeLife() {
     lifeCounter--
-    if (lifeCounter > 0) {
-        lifeText.html(lifeCounter)
-    } else {
+    lifeText.html(lifeCounter)
+    if (lifeCounter == 0) {
         gameOver()
     }
 
@@ -36,8 +36,17 @@ function removeLife() {
 // Game
 
 $(() => {
-    setupGame()
+    $(document).on('keydown', startGameloop)
 })
+
+function startGameloop(event) {
+    console.log(event.key);
+    if (event.code == "Space") {
+        $("#MessageText").html('')
+        $(document).off('keydown')
+        setupGame()
+    }
+}
 
 // Funktion welche den gamestate initialisiert
 function setupGame() {
@@ -49,7 +58,8 @@ function setupGame() {
     scoreText = $("#Score")
     lifeText = $("#Lifes")
     gamespace = $(".gamespace")
-    updateIntervall = setInterval(updateFunction, 500)
+    messageText = $("#MessageText")
+    updateIntervall = setInterval(updateFunction, 250)
     $(document).on('keydown', move)
 
     gameRunning = true;
@@ -71,11 +81,13 @@ function move(event) {
             playerPosition = 1
             break;
         case "*":
+        case "e":
             korb.css('left', '470px');
             korb.css('top', '250px');
             playerPosition = 2
             break;
         case "-":
+        case "c":
             korb.css('left', '470px');
             korb.css('top', '375px');
             playerPosition = 3
@@ -164,4 +176,7 @@ function udpateEgg() {
 function gameOver() {
     clearInterval(updateIntervall)
     gameRunning = false;
+    messageText.html("Gameover - Space to play again")
+    $(document).off('keydown')
+    $(document).on('keydown', startGameloop)
 }
